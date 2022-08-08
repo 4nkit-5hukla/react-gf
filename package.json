@@ -1,6 +1,6 @@
 {
   "name": "react-gfl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component to load Google Fonts.",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
