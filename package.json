@@ -8,6 +8,11 @@
   "repository": "https://github.com/nK0D/react-gfl",
   "author": "Ankit Shukla",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "google-fonts",
+    "google-font-loader"
+  ],
   "scripts": {
     "build": "babel src -d build --copy-files",
     "prepublishOnly": "npm run build"

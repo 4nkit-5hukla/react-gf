@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const createLink = (fonts, subsets, display) => {
+const createLink = (fonts, subsets, display, onLoad) => {
   const families = fonts
     .reduce((acc, font) => {
       const family = font.font.replace(/ +/g, '+');
@@ -14,6 +14,7 @@ const createLink = (fonts, subsets, display) => {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = `https://fonts.googleapis.com/css?family=${families}`;
+  link.onload = onLoad;
 
   if (subsets && Array.isArray(subsets) && subsets.length > 0) {
     link.href += `&subset=${subsets.join(',')}`;
@@ -26,8 +27,8 @@ const createLink = (fonts, subsets, display) => {
   return link;
 };
 
-const ReactGFL = ({ fonts, subsets, display = null }) => {
-  const [link, setLink] = useState(createLink(fonts, subsets, display));
+const ReactGFL = ({ fonts, subsets, onLoad, display = null }) => {
+  const [link, setLink] = useState(createLink(fonts, subsets, display, onLoad));
 
   useEffect(() => {
     document.head.appendChild(link);

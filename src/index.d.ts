@@ -8,6 +8,7 @@ export interface Font {
 export interface ReactGFLProps {
   fonts: Font[];
   subsets?: string[];
+  onLoad?: (arg?: any) => void;
   display?: 'auto' | 'block' | 'swap' | 'fallback' | 'optional';
 }
 
