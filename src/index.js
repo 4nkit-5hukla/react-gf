@@ -51,6 +51,7 @@ ReactGFL.propTypes = {
     })
   ).isRequired,
   subsets: PropTypes.arrayOf(PropTypes.string),
+  onLoad: PropTypes.func,
   display: PropTypes.string
 };
 
